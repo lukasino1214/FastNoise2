@@ -7,7 +7,6 @@ set(CMAKE_CXX_STANDARD 17)
 # Build DLL
 #set(BUILD_SHARED_LIBS ON) 
 
-option(FASTNOISE2_NOISETOOL "Build NoiseTool application" ON)
 option(FASTNOISE2_TESTS "Build tests" OFF)
 
 if(MSVC)
@@ -28,11 +27,6 @@ include(GNUInstallDirs)
 set(install_targets "")
 
 add_subdirectory(src)
-
-if(FASTNOISE2_NOISETOOL)
-    include(cmake/CPM.cmake)
-    add_subdirectory(NoiseTool)
-endif()
 
 if(FASTNOISE2_TESTS)
     include(cmake/CPM.cmake)  
